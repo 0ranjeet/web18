@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <style> *{
+        text-align: center;
+    }
+    input{
+        margin: 2%;
+    }</style>
+</head>
+<body>
+    <h1>MASAI</h1>
+    <form id="form">
+   
+    <input type="text" placeholder="Email or username" id="email"><br>
+    <input type="text"placeholder="Password" id="password"><br>
+    <input type="submit" value="LOG IN">
+    </form>
+    
+</body>
+</html>
+<script>
+       userdata=JSON.parse(localStorage.getItem("userdata"))
+       document.querySelector("form").addEventListener("submit",function login(){
+           event.preventDefault();
+           var indata={
+               username:form.email.value,
+               userpwd:form.password.value,
+           }
+           if(indata===null){
+               alert("create an account")
+           }else if((indata.username==userdata.email)||(indata.username==userdata.username)){
+               localStorage.setItem("signdat",JSON.stringify(userdata))
+               alert("log in succsesfull")
+           }else{
+               alert("user doesnot exist!")
+           }
+       })
+</script>
