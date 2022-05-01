@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        body{
+            padding: 5% 15%;
+            display: block;
+        }
+        input{
+            margin: 2%;
+        }
+    </style>
+</head>
+<body>
+    <h1>MASAI</h1>
+    <form id="form">
+    <input type="text"placeholder="Full name" id="name"><br>
+    <input type="text" placeholder="Email" id="email"><br>
+    <input type="text"placeholder="Password" id="password"><br>
+    <input type="submit" value="signup">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",signup)
+    function signup(){
+        event.preventDefault();
+        var userdata={
+            username:form.name.value,
+            email:form.email.value,
+            passward:form.password.value,
+        }
+        window.location.href="signin.html";
+        localStorage.setItem("userdata",JSON.stringify(userdata))
+    }
+</script>
